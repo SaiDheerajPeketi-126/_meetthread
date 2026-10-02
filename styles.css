@@ -1,0 +1,66 @@
+@charset "UTF-8";
+:root {
+  color-scheme: light dark;
+  --paper: #fcf9f2; --ink: #1d2925; --muted: #46564c;
+  --green: #245b50; --line: #a7b0a1; --notice: #eee8d8; --notice-ink: #693f32; --focus: #8c5a17;
+  background: var(--paper); color: var(--ink);
+  font: 18px/1.7 system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: var(--green); text-underline-offset: .2em; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
+a:hover { text-decoration-thickness: 2px; }
+a:active { color: var(--ink); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+::selection { background: #c9dfd1; color: #153e36; }
+.shell { width: min(1120px, 100%); margin: auto; padding-inline: 32px; }
+.site-header { border-bottom: 1px solid var(--line); }
+.site-header .shell { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding-block: 20px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; color: var(--ink); font: 700 1.3rem Georgia, serif; text-decoration: none; }
+.brand svg { flex: 0 0 auto; width: 36px; height: 36px; }
+.global-nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.global-nav a { display: inline-flex; align-items: center; min-height: 48px; padding-block: 8px; font-size: .94rem; }
+.global-nav [aria-current="page"] { color: var(--ink); font-weight: 650; text-decoration-thickness: 2px; }
+.skip { position: absolute; z-index: 2; left: 20px; top: 8px; padding: 12px 20px; background: var(--paper); transform: translateY(-180%); }
+.skip:focus { transform: none; }
+.page { display: grid; grid-template-columns: 220px minmax(0,1fr); gap: 64px; padding-block: 56px 80px; }
+.contents { align-self: start; position: sticky; top: 24px; font-size: .9rem; }
+.contents h2 { margin: 0 0 12px; font: 650 1rem/1.5 system-ui, sans-serif; }
+.contents a { display: flex; align-items: center; min-height: 44px; padding-block: 8px; line-height: 1.4; }
+main { min-width: 0; max-width: 70ch; overflow-wrap: anywhere; }
+h1, h2, h3 { overflow-wrap: anywhere; text-wrap: balance; }
+h1 { margin: 0 0 20px; font: 400 2.5rem/1.15 Georgia, serif; letter-spacing: -.025em; }
+h2 { margin: 52px 0 16px; font: 400 1.55rem/1.25 Georgia, serif; scroll-margin-top: 24px; }
+h3 { margin: 28px 0 10px; font: 650 1.05rem/1.5 system-ui, sans-serif; }
+p { margin: 0 0 20px; }
+.lead { font-size: 1.18rem; line-height: 1.6; }
+.muted, .date { color: var(--muted); }
+.date { font-size: .9rem; }
+ul, ol { padding-left: 1.3em; margin-block: 16px 24px; }
+li { margin-bottom: 12px; padding-left: 4px; }
+dt { font-weight: 650; margin: 24px 0 8px; }
+dd { margin: 0 0 20px; }
+.email-link { display: inline-flex; align-items: center; min-height: 52px; padding-block: 8px; font-weight: 650; }
+.site-footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+.site-footer .shell { padding-block: 28px 40px; }
+.site-footer p { margin-bottom: 12px; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+.site-footer a { display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 760px) {
+  .shell { padding-inline: 20px; }
+  .page { grid-template-columns: 1fr; gap: 28px; padding-block: 32px 56px; }
+  .contents { position: static; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .contents nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  h1 { font-size: 2rem; }
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #141c18; --ink: #e3e9dd; --muted: #c0cbbb; --green: #a1d0bc; --line: #63715f; --notice: #302a20; --notice-ink: #efd6ac; --focus: #efbd72; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  :root { color-scheme: light; --paper: white; --ink: black; --muted: black; --green: black; --line: #666; --notice: white; --notice-ink: black; --focus: black; background: white; color: black; }
+  .site-header, .contents, .skip, .site-footer nav { display: none; }
+  .page { display: block; padding: 0; }
+  main { max-width: none; }
+  a { color: black; }
+}

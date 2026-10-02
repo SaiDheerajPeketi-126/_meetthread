@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; script-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="description" content="MeetThread privacy, local data choices, optional diagnostics, hosting and account-deletion information.">
+  <link rel="canonical" href="https://meetthread.blackandblue.co.in/">
+  <link rel="stylesheet" href="styles.css"><title>MeetThread privacy policy · Black and Blue</title>
+</head>
+<body>
+<a class="skip" href="#main">Skip to policy</a>
+<header class="site-header"><div class="shell">
+  <a class="brand" href="index.html"><svg viewBox="0 0 108 108" aria-hidden="true"><path fill="#153E3B" d="M0 0h108v108H0z"/><path fill="none" stroke="#F4EFE4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M27 73V35L44 55 61 35V73M76 35V73M67 35H85"/></svg>MeetThread</a>
+  <nav class="global-nav" aria-label="Site"><a href="index.html" aria-current="page">Privacy</a><a href="support.html">Support</a><a href="delete-account.html">Account deletion</a></nav>
+</div></header>
+<div class="shell page">
+<aside class="contents"><h2>On this page</h2><nav aria-label="Policy sections">
+  <a href="#local-data">Local data</a><a href="#sharing">Sharing &amp; hosting</a><a href="#diagnostics">Diagnostics</a><a href="#purchases">Purchases</a><a href="#retention">Retention</a><a href="#delete-account">Deletion choices</a><a href="#providers">Providers</a><a href="#contact">Contact &amp; rights</a>
+</nav></aside>
+<main id="main" tabindex="-1">
+  <h1>Privacy policy</h1>
+  <p class="lead">Your introduction can be public. Your saved contacts, private notes and follow-ups stay separate from it.</p>
+  <p class="date">Publisher: Black and Blue · Effective date: 2 October 2026</p>
+  
+  <p>This policy concerns MeetThread for Android, package <strong>com.blackandblue.meetthread</strong>, and its optional public card viewer. Local card sharing does not require a hosting account.</p>
+
+  <section aria-labelledby="local-data"><h2 id="local-data">Data stored on your device</h2>
+    <p>MeetThread stores your card profiles, contacts you enter, private notes, tags, reminder times and follow-up outcomes in the app’s private storage. WorkManager schedules device reminders. The current notification text is generic; it does not put a saved contact’s name or private note in the alert.</p>
+    <p>MeetThread excludes app data from Android cloud backup and device transfer. Clearing app storage, uninstalling, device loss or storage failure can remove local information. The app does not promise a cloud copy of your private contact book.</p>
+    <p>Where reviewer access is included, a separate encrypted receipt in no-backup storage authorizes local premium actions. It does not create a purchase, sign-in account or hosted entitlement. Removing reviewer access preserves existing cards and contacts.</p>
+  </section>
+
+  <section aria-labelledby="sharing"><h2 id="sharing">What you choose to share</h2>
+    <p>Offline QR, vCard, CSV export and compatible NFC-tag writing share data under your control. A vCard contains the chosen profile’s public-facing details and introduction. A contact CSV includes contact details, private notes and tags; it does not include follow-up outcome history. Recipients and export destinations can retain their own copies.</p>
+    <h3>Optional account and public card hosting</h3>
+    <p>When configured, Firebase Authentication handles your sign-in email, password credential and account identifier. Publishing sends the chosen card’s name, role, company, email, phone, website, introduction, design/branding settings and owner identifier to Firestore. Anyone with the card’s link can view and save those published details.</p>
+    <p>Your saved contact book, private contact notes, tags and follow-up history are not part of the public card payload. Unpublishing requests deletion of the hosted card document; it cannot recall recipient downloads or previously shared exports. Public hosting can process IP addresses and other operational request metadata. The viewer does not load an analytics SDK or identify anonymous viewers for you.</p>
+  </section>
+
+  <section aria-labelledby="diagnostics"><h2 id="diagnostics">Optional usage and diagnostic reporting</h2>
+    <p>Usage Analytics and automatic Crashlytics upload default off. Settings has separate choices for usage events and app-initiated local diagnostic logging. A failed choice pauses these app-originated gates for that session; an earlier saved choice may return after restart, so retry a failed change before closing.</p>
+    <p>MeetThread’s own Analytics calls use only fixed action names, not the text of your profiles or contacts. Its vCard-sharing diagnostic uses a fixed failure description. Firebase SDKs can add service-generated usage/diagnostic information and process installation/app/device identifiers, stack traces and app state; Firebase initializes when the configured app starts and can retain crash information locally even with automatic upload disabled. This is not a promise that disabled optional reporting prevents every SDK operation.</p>
+    <p>Turning off Analytics requests an on-device Analytics reset. Changing the local diagnostic switch does not itself send or delete pending reports. The pending-report screen offers a one-time check and explicit <strong>Send</strong>, <strong>Delete</strong> or <strong>Not now</strong>. Send/Delete are queued requests without a completion receipt. Reports already queued for transmission cannot be recalled, and these controls do not erase data already held by a provider.</p>
+    <p>MeetThread disables Analytics advertising-ID collection and ad-personalization consent. The optional reporting controls apply to Analytics events and crash-report handling; they do not disable authentication, hosting or store operations you use.</p>
+  </section>
+
+  <section aria-labelledby="purchases"><h2 id="purchases">Purchases and hosted Pro access</h2>
+    <p>When configured, RevenueCat initializes when MeetThread starts, independently of the Firebase privacy choices. Those choices do not disable store integration. Google Play and RevenueCat process purchase/restoration records, entitlement status and associated app-user identifiers. A hosting sign-in associates the RevenueCat app-user identity with the Firebase account identifier. MeetThread does not ask you for a payment-card number.</p>
+    <p>Trusted server verification is required for hosted premium profiles/designs. A local purchase status or reviewer receipt is not server authorization. Account deletion does not automatically erase Google Play transaction records or RevenueCat history; provider-record requests require a separate review.</p>
+  </section>
+
+  <section aria-labelledby="retention"><h2 id="retention">Retention and its limits</h2>
+    <dl>
+      <dt>Local records and exports</dt><dd>Local profiles and contacts remain until you delete them or clear app storage. Copies exported or downloaded elsewhere must be managed separately. In-app local-record deletion does not claim to clear every SDK cache, privacy preference or diagnostic file.</dd>
+      <dt>Hosted cards and sign-in accounts</dt><dd>When the services are configured, they remain until a confirmed unpublish/account-deletion operation or an administered request removes them. A timeout or partial failure is not confirmation that all associated information was deleted.</dd>
+      <dt>Analytics retention settings</dt><dd>The linked MeetThread Analytics property was checked on 1 October 2026: event-data retention is 2 months, user-data retention is 14 months, and reset on new activity is on. These controls apply to identifier-associated user/event data; standard aggregated reports are unaffected. New activity refreshes the user-identifier period, and expired data is deleted on a monthly schedule. These settings do not mean that all Analytics data disappears after 2 months. See <a href="https://support.google.com/analytics/answer/7667196?hl=en">Google’s retention explanation</a>.</dd>
+      <dt>Deletion-suppression marker</dt><dd>When the account-cleanup service is used, it retains a keyed hash of the account identifier and a deletion timestamp to prevent delayed purchase callbacks from recreating hosted access. This marker has no automatic expiry. You can ask Black and Blue to review it through the deletion-request contact; removing it can affect protection against delayed callbacks.</dd>
+      <dt>Other provider records</dt><dd>Diagnostic, authentication, purchase and operational records follow the relevant provider settings and applicable legal obligations. There is no single app-wide retention period for these records. Contact Black and Blue to request review or deletion of information held for MeetThread, including anonymous purchase identifiers. Records needed for legal, accounting, security or fraud-prevention obligations may be retained; we do not promise that deleting an account erases every provider record.</dd>
+    </dl>
+  </section>
+
+  <section aria-labelledby="delete-account"><h2 id="delete-account">Your deletion choices</h2>
+    <p><a href="delete-account.html">Request account deletion or review the in-app steps</a>. Hosted-account deletion, local-record erasure and provider-record requests are different actions. The account cleanup path can fail part-way; read the reported result and retry an unconfirmed operation.</p>
+    <p>In Settings, <strong>Delete data on this device</strong> removes the local card/contact book and scheduled reminders after hosted-card checks. Reviewer-receipt removal is attempted separately and can require retry. Local diagnostics and already shared/exported copies are not claimed deleted by that book reset. Android’s clear-storage/uninstall controls remove app-private storage, but do not delete remote service records.</p>
+  </section>
+
+  <section aria-labelledby="providers"><h2 id="providers">Providers, security and this website</h2>
+    <p>MeetThread uses Google/Firebase for configured authentication, hosted data, Analytics and Crashlytics, and Google Play and RevenueCat for configured store operations. Hosted premium access and account cleanup depend on a separately configured Cloudflare service. A cleanup request processes a Firebase authentication token and account identifier to verify ownership and prevent delayed purchase callbacks from restoring deleted hosted access. If that service is unavailable or a request fails, the app does not confirm account cleanup; contact support about the remaining information.</p>
+    <p>Configured app requests use HTTPS. No security measure can promise against every device compromise or copied export. Providers may process information outside your country under their service and privacy terms.</p>
+    <p>This static site contains no scripts, forms, cookies set by its source, remote fonts or tracking pixels. The website hosting provider may process network/security metadata. Following an external provider link is subject to that provider’s policy.</p>
+    <ul><li><a href="https://firebase.google.com/support/privacy">Firebase privacy and security</a></li><li><a href="https://firebase.google.com/docs/android/play-data-disclosure">Firebase Android data disclosures</a></li><li><a href="https://policies.google.com/privacy">Google privacy policy</a></li><li><a href="https://www.revenuecat.com/privacy">RevenueCat privacy policy</a></li></ul>
+  </section>
+
+  <section aria-labelledby="contact"><h2 id="contact">Contact, rights and changes</h2>
+    <p>For privacy, support or deletion requests, contact Black and Blue at <a href="mailto:developer@blackandblue.co.in?subject=MeetThread%20privacy%20request">developer@blackandblue.co.in</a>. Include <strong>MeetThread</strong> and only the minimum information needed to identify your request. Do not send passwords, authentication links/tokens, payment-card details, reviewer codes or your private contact exports.</p>
+    <p>Depending on where you live, you may have rights to access, correct, delete or restrict use of your information, or withdraw optional consent. A request may require proportionate identity verification and consideration of provider or legal limits. Submitting a request is not confirmation that deletion has completed.</p>
+    <p>MeetThread is intended for professional use by adults aged 18 and over and is not directed to children. The app currently has no age-verification or parental-consent flow; this audience statement does not guarantee that a minor cannot access it. If you believe a child’s information was provided, contact us. We will update this page and its effective date when the policy changes.</p>
+  </section>
+</main></div>
+<footer class="site-footer"><div class="shell"><p>MeetThread · Black and Blue</p><nav aria-label="Footer"><a href="index.html">Privacy policy</a><a href="support.html">Support</a><a href="delete-account.html">Account deletion</a><a href="mailto:developer@blackandblue.co.in?subject=MeetThread%20support">developer@blackandblue.co.in</a></nav></div></footer>
+</body></html>
